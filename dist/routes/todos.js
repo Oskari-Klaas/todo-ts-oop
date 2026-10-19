@@ -3,9 +3,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const todos_1 = require("../controllers/todos");
 const router = (0, express_1.Router)();
-router.post('/', todos_1.createTodo);
-router.get('/', todos_1.getTodos);
-router.patch('/:id', todos_1.updateTodo);
-router.delete('/:id', todos_1.deleteTodo);
+const todosController = new todos_1.TodosController();
+router.post('/', todosController.createTodo);
+router.get('/', todosController.getTodos);
+router.patch('/:id', todosController.updateTodo);
+router.delete('/:id', todosController.deleteTodo);
 exports.default = router;
 //# sourceMappingURL=todos.js.map
